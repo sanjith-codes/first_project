@@ -1,14 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sanjith</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seven Wonders of the World</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background: #f4f6f9;
+    }
+
+    header {
+        background: #2c3e50;
+        color: white;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .container {
+        padding: 20px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+    }
+
+    .card {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        transition: transform 0.2s;
+    }
+
+    .card:hover {
+        transform: scale(1.03);
+    }
+
+    h2 {
+        color: #2c3e50;
+    }
+
+    ul {
+        padding-left: 20px;
+    }
+</style>
 </head>
+
 <body>
-    <h1>jon</h1>
-    <h1>daaaaaaaaaa</h1>
-    <img width="200px" src="download.jpg" alt="">
-    <p>dinkgaga dinkgaka </p>
+
+<header>
+    <h1>Seven Wonders of the World</h1>
+</header>
+
+<div class="container">
+
+    <div class="card">
+        <h2>Great Wall of China</h2>
+        <ul>
+            <li>Over 21,000 km long</li>
+            <li>Built to protect China from invasions</li>
+            <li>Constructed over many dynasties</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>Petra (Jordan)</h2>
+        <ul>
+            <li>Ancient city carved in rock</li>
+            <li>Known as the "Rose City"</li>
+            <li>Built around 300 BC</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>Christ the Redeemer (Brazil)</h2>
+        <ul>
+            <li>Statue in Rio de Janeiro</li>
+            <li>38 meters tall</li>
+            <li>Symbol of Christianity</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>Machu Picchu (Peru)</h2>
+        <ul>
+            <li>Incan city in the Andes</li>
+            <li>Built in the 15th century</li>
+            <li>Hidden for centuries</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>Chichen Itza (Mexico)</h2>
+        <ul>
+            <li>Mayan pyramid (El Castillo)</li>
+            <li>Used for astronomy</li>
+            <li>Famous for shadow effect</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>Roman Colosseum (Italy)</h2>
+        <ul>
+            <li>Ancient amphitheater</li>
+            <li>Held 50,000 spectators</li>
+            <li>Used for gladiator fights</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>Taj Mahal (India)</h2>
+        <ul>
+            <li>Built by Shah Jahan</li>
+            <li>Symbol of love</li>
+            <li>Made of white marble</li>
+        </ul>
+    </div>
+
+</div>
+
 </body>
 </html>
