@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Seven Wonders of the World</title>
+<title>Seven Wonders Interactive</title>
 
 <style>
     body {
@@ -31,19 +31,30 @@
         padding: 20px;
         border-radius: 10px;
         box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        transition: transform 0.2s;
-    }
-
-    .card:hover {
-        transform: scale(1.03);
     }
 
     h2 {
         color: #2c3e50;
+        cursor: pointer;
+    }
+
+    h2:hover {
+        color: #0077ff;
     }
 
     ul {
         padding-left: 20px;
+    }
+
+    .images {
+        display: none;
+        margin-top: 10px;
+    }
+
+    .images img {
+        width: 100%;
+        border-radius: 8px;
+        margin-top: 8px;
     }
 </style>
 </head>
@@ -52,74 +63,121 @@
 
 <header>
     <h1>Seven Wonders of the World</h1>
+    <p>Click on any wonder to see images</p>
 </header>
 
 <div class="container">
 
+    <!-- Great Wall -->
     <div class="card">
-        <h2>Great Wall of China</h2>
+        <h2 onclick="toggleImages('china')">Great Wall of China</h2>
         <ul>
             <li>Over 21,000 km long</li>
-            <li>Built to protect China from invasions</li>
-            <li>Constructed over many dynasties</li>
+            <li>Built for protection</li>
+            <li>Across many dynasties</li>
         </ul>
+        <div id="china" class="images">
+            <img src="https://source.unsplash.com/400x250/?great-wall-of-china">
+            <img src="https://source.unsplash.com/400x250/?china-wall">
+        </div>
     </div>
 
+    <!-- Petra -->
     <div class="card">
-        <h2>Petra (Jordan)</h2>
+        <h2 onclick="toggleImages('petra')">Petra</h2>
         <ul>
-            <li>Ancient city carved in rock</li>
-            <li>Known as the "Rose City"</li>
-            <li>Built around 300 BC</li>
+            <li>Rock-cut architecture</li>
+            <li>Rose-colored city</li>
+            <li>Ancient trade hub</li>
         </ul>
+        <div id="petra" class="images">
+            <img src="https://source.unsplash.com/400x250/?petra-jordan">
+            <img src="https://source.unsplash.com/400x250/?ancient-petra">
+        </div>
     </div>
 
+    <!-- Christ -->
     <div class="card">
-        <h2>Christ the Redeemer (Brazil)</h2>
+        <h2 onclick="toggleImages('christ')">Christ the Redeemer</h2>
         <ul>
-            <li>Statue in Rio de Janeiro</li>
-            <li>38 meters tall</li>
-            <li>Symbol of Christianity</li>
+            <li>Rio de Janeiro</li>
+            <li>38m tall statue</li>
+            <li>Famous landmark</li>
         </ul>
+        <div id="christ" class="images">
+            <img src="https://source.unsplash.com/400x250/?christ-redeemer">
+            <img src="https://source.unsplash.com/400x250/?rio-statue">
+        </div>
     </div>
 
+    <!-- Machu Picchu -->
     <div class="card">
-        <h2>Machu Picchu (Peru)</h2>
+        <h2 onclick="toggleImages('machu')">Machu Picchu</h2>
         <ul>
-            <li>Incan city in the Andes</li>
-            <li>Built in the 15th century</li>
-            <li>Hidden for centuries</li>
+            <li>Incan ruins</li>
+            <li>Andes mountains</li>
+            <li>15th century</li>
         </ul>
+        <div id="machu" class="images">
+            <img src="https://source.unsplash.com/400x250/?machu-picchu">
+            <img src="https://source.unsplash.com/400x250/?andes-peru">
+        </div>
     </div>
 
+    <!-- Chichen Itza -->
     <div class="card">
-        <h2>Chichen Itza (Mexico)</h2>
+        <h2 onclick="toggleImages('chichen')">Chichen Itza</h2>
         <ul>
-            <li>Mayan pyramid (El Castillo)</li>
-            <li>Used for astronomy</li>
-            <li>Famous for shadow effect</li>
+            <li>Mayan pyramid</li>
+            <li>El Castillo</li>
+            <li>Astronomy usage</li>
         </ul>
+        <div id="chichen" class="images">
+            <img src="https://source.unsplash.com/400x250/?chichen-itza">
+            <img src="https://source.unsplash.com/400x250/?mayan-pyramid">
+        </div>
     </div>
 
+    <!-- Colosseum -->
     <div class="card">
-        <h2>Roman Colosseum (Italy)</h2>
+        <h2 onclick="toggleImages('rome')">Colosseum</h2>
         <ul>
-            <li>Ancient amphitheater</li>
-            <li>Held 50,000 spectators</li>
-            <li>Used for gladiator fights</li>
+            <li>Ancient Rome</li>
+            <li>50,000 capacity</li>
+            <li>Gladiator fights</li>
         </ul>
+        <div id="rome" class="images">
+            <img src="https://source.unsplash.com/400x250/?colosseum">
+            <img src="https://source.unsplash.com/400x250/?rome-colosseum">
+        </div>
     </div>
 
+    <!-- Taj Mahal -->
     <div class="card">
-        <h2>Taj Mahal (India)</h2>
+        <h2 onclick="toggleImages('taj')">Taj Mahal</h2>
         <ul>
-            <li>Built by Shah Jahan</li>
             <li>Symbol of love</li>
-            <li>Made of white marble</li>
+            <li>White marble</li>
+            <li>Agra, India</li>
         </ul>
+        <div id="taj" class="images">
+            <img src="https://source.unsplash.com/400x250/?taj-mahal">
+            <img src="https://source.unsplash.com/400x250/?agra-taj">
+        </div>
     </div>
 
 </div>
+
+<script>
+function toggleImages(id) {
+    let section = document.getElementById(id);
+    if (section.style.display === "block") {
+        section.style.display = "none";
+    } else {
+        section.style.display = "block";
+    }
+}
+</script>
 
 </body>
 </html>
